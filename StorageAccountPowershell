@@ -1,0 +1,13 @@
+# Login to Azure
+az login
+
+# Define the variables
+resourceGroup="myResourceGroup"
+location="EastUS"
+storageAccountName="mystorageaccount"
+
+# Create a new resource group (if needed)
+az group create --name $resourceGroup --location $location
+
+# Create the storage account
+az storage account create --name $storageAccountName --resource-group $resourceGroup --location $location --sku Standard_LRS
